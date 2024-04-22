@@ -10,7 +10,6 @@ import SwiftUI
 import Combine
 
 class UserDefaultColor: ObservableObject {
-  
   @Published var color: Color = .black
   
   var subscriptions = Set<AnyCancellable>()
@@ -21,9 +20,6 @@ class UserDefaultColor: ObservableObject {
        let customColor = try? JSONDecoder().decode(CustomColor.self, from: data){
       color = customColor.color
     }
-    
-    
-    // saving to userdefaults
     
     $color
       .map { color in
@@ -39,5 +35,4 @@ class UserDefaultColor: ObservableObject {
   }
   
   let key = "selectedColor"
-  
 }

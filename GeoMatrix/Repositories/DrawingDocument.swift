@@ -9,15 +9,8 @@ import Foundation
 import Combine
 
 class DrawingDocument: ObservableObject {
-  
-  
   @Published var lines = [Line]()
-  //    {
-  //        didSet {
-  //            save()
-  //        }
-  //    }
-  //
+  
   var subscription = Set<AnyCancellable>()
   
   init() {
@@ -36,8 +29,7 @@ class DrawingDocument: ObservableObject {
     
     $lines
       .filter({ !$0.isEmpty })
-    //.throttle(for: 2, scheduler: RunLoop.main, latest: true) // fixed per interval
-      .debounce(for: 2, scheduler: RunLoop.main) // bursty events
+      .debounce(for: 2, scheduler: RunLoop.main)
       .sink { [unowned self] lines in
         self.save()
       }.store(in: &subscription)
@@ -50,7 +42,6 @@ class DrawingDocument: ObservableObject {
       let data = try? encoder.encode(self.lines)
       
       do {
-        
         try data?.write(to: self.url)
       }catch {
         print("error saving \(error)")

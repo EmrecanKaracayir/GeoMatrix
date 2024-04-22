@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0242AC72BD5CC11004D1D57 /* UserDefaultLineWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0242AC62BD5CC11004D1D57 /* UserDefaultLineWidth.swift */; };
+		A0242AC92BD5F167004D1D57 /* UserDefaultSmoothingFactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0242AC82BD5F167004D1D57 /* UserDefaultSmoothingFactor.swift */; };
+		A0242ACC2BD5FB50004D1D57 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0242ACB2BD5FB50004D1D57 /* Timer.swift */; };
 		A06079DC2BC039860070F8AB /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06079DB2BC039860070F8AB /* DrawingView.swift */; };
 		A06079DE2BC03A110070F8AB /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06079DD2BC03A110070F8AB /* Line.swift */; };
 		A06079E02BC03A920070F8AB /* DrawingEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06079DF2BC03A920070F8AB /* DrawingEngine.swift */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A0242AC62BD5CC11004D1D57 /* UserDefaultLineWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultLineWidth.swift; sourceTree = "<group>"; };
+		A0242AC82BD5F167004D1D57 /* UserDefaultSmoothingFactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultSmoothingFactor.swift; sourceTree = "<group>"; };
+		A0242ACB2BD5FB50004D1D57 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		A06079DB2BC039860070F8AB /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
 		A06079DD2BC03A110070F8AB /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		A06079DF2BC03A920070F8AB /* DrawingEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingEngine.swift; sourceTree = "<group>"; };
@@ -42,6 +48,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A0242AC02BD5CA8A004D1D57 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				A06079E52BC03D8A0070F8AB /* DrawingDocument.swift */,
+				A0242AC12BD5CA98004D1D57 /* UserDefaults */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		A0242AC12BD5CA98004D1D57 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				A06079E32BC03D2A0070F8AB /* UserDefaultColor.swift */,
+				A0242AC62BD5CC11004D1D57 /* UserDefaultLineWidth.swift */,
+				A0242AC82BD5F167004D1D57 /* UserDefaultSmoothingFactor.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		A0242AC22BD5CAD4004D1D57 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A06079DB2BC039860070F8AB /* DrawingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A0242AC32BD5CB05004D1D57 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				A0242AC42BD5CB15004D1D57 /* Drawing */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		A0242AC42BD5CB15004D1D57 /* Drawing */ = {
+			isa = PBXGroup;
+			children = (
+				A06079DF2BC03A920070F8AB /* DrawingEngine.swift */,
+				A06079E12BC03B290070F8AB /* DrawingShape.swift */,
+				A06079DD2BC03A110070F8AB /* Line.swift */,
+			);
+			path = Drawing;
+			sourceTree = "<group>";
+		};
+		A0242ACA2BD5FB44004D1D57 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A0242ACB2BD5FB50004D1D57 /* Timer.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		A09029332BB0DBAC00013269 = {
 			isa = PBXGroup;
 			children = (
@@ -61,15 +120,13 @@
 		A090293E2BB0DBAC00013269 /* GeoMatrix */ = {
 			isa = PBXGroup;
 			children = (
-				A06079DB2BC039860070F8AB /* DrawingView.swift */,
+				A0242ACA2BD5FB44004D1D57 /* Utilities */,
 				A090293F2BB0DBAC00013269 /* GeoMatrixApp.swift */,
 				A09029432BB0DBAE00013269 /* Assets.xcassets */,
+				A0242AC32BD5CB05004D1D57 /* Features */,
 				A09029452BB0DBAE00013269 /* Preview Content */,
-				A06079DD2BC03A110070F8AB /* Line.swift */,
-				A06079DF2BC03A920070F8AB /* DrawingEngine.swift */,
-				A06079E12BC03B290070F8AB /* DrawingShape.swift */,
-				A06079E32BC03D2A0070F8AB /* UserDefaultColor.swift */,
-				A06079E52BC03D8A0070F8AB /* DrawingDocument.swift */,
+				A0242AC02BD5CA8A004D1D57 /* Repositories */,
+				A0242AC22BD5CAD4004D1D57 /* Views */,
 			);
 			path = GeoMatrix;
 			sourceTree = "<group>";
@@ -153,12 +210,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A06079E02BC03A920070F8AB /* DrawingEngine.swift in Sources */,
+				A0242AC72BD5CC11004D1D57 /* UserDefaultLineWidth.swift in Sources */,
 				A06079DE2BC03A110070F8AB /* Line.swift in Sources */,
+				A0242ACC2BD5FB50004D1D57 /* Timer.swift in Sources */,
 				A06079E42BC03D2A0070F8AB /* UserDefaultColor.swift in Sources */,
 				A06079E62BC03D8A0070F8AB /* DrawingDocument.swift in Sources */,
 				A06079E22BC03B290070F8AB /* DrawingShape.swift in Sources */,
 				A06079DC2BC039860070F8AB /* DrawingView.swift in Sources */,
 				A09029402BB0DBAC00013269 /* GeoMatrixApp.swift in Sources */,
+				A0242AC92BD5F167004D1D57 /* UserDefaultSmoothingFactor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
